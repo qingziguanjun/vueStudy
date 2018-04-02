@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    {{ message }}{{test}}
+</div>
+</body>
+
+<!--
+  命令行直接输入 vm.message='xxx'  动态改变
+-->
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            test: 'Hello Vue!'
+        }
+    })
+</script>
+</html>

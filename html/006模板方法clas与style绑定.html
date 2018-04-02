@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="testBind" class="static"
+     v-bind:class="{ active: isActive, 'text-danger': hasError }">Simple
+
+</div>
+<div id="test2" v-bind:class="[activeClass, errorClass]">array</div>
+<!-- v-bind:style 的对象语法十分直观——看着非常像 CSS，但其实是一个 JavaScript 对象。
+CSS 属性名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用单引号括起来) 来-->
+<div id="test3" v-bind:style="styleObject">object</div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#testBind',
+        data: {
+            isActive: true,
+            hasError: false,
+
+        }
+    });
+
+    var vmArrayTest = new Vue({
+        el: '#test2',
+        data: {
+            activeClass: 'active',
+            errorClass: 'text-danger'
+
+        }
+    });
+
+    var vmObjectBind = new Vue({
+        el: '#test3',
+        data: {
+            styleObject: {
+                color: 'red',
+                fontSize: '13px'
+            }
+
+        }
+    });
+</script>
+</html>

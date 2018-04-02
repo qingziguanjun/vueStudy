@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="demo">
+    <!-- 只有在 `keyCode` 是 13 时调用 `vm.submit()` -->
+    <input id="text" v-on:keyup.13="submit">
+
+    <!-- 同上 -->
+    <input v-on:keyup.enter="submit">
+
+    <!-- 缩写语法 -->
+    <input @keyup.enter="submit">
+
+
+    <input @keyup.tab="tabTest" placeholder="tab">
+    <input @keyup.delete="deleteTest" placeholder="delete">
+    <input @keyup.esc="esc" placeholder="esc">
+    <input @keyup.space="space" placeholder="space">
+    <input @keyup.up="up" placeholder="up">
+    <input @keyup.down="down" placeholder="down">
+    <input @keyup.left="left" placeholder="left">
+    <input @keyup.right="right" placeholder="right">
+</div>
+</body>
+<script>
+
+    var vm = new Vue({
+        el:"#demo",
+        methods:{
+            submit:function(){
+                var text = $("#text").val();
+                alert(text + "   submit");
+            },
+            tabTest:function(){
+                alert("tab")
+             },
+            deleteTest:function(){
+                alert("delete")
+             },
+            esc:function(){
+                alert("esc")
+             },
+            space:function(){
+                alert("space")
+             },
+            up:function(){
+                alert("up")
+             },
+            down:function(){
+                alert("down")
+             },
+            left:function(){
+                alert("left")
+             },
+            right:function(){
+                alert("right")
+             },
+
+
+
+        }
+    })
+</script>
+</html>
